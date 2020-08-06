@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | Hexo</title>
+  <title>tsConfig | Hexo</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="概述如果一个目录下存在一个tsconfig.json文件，那么它意味着这个目录是TypeScript项目的根目录。使用tsconfig.json 不带任何输入文件的情况下调用tsc，编译器会从当前目录开始去查找tsconfig.json文件，逐级向上搜索父目录。 不带任何输入文件的情况下调用tsc，且使用命令行参数–project（或-p）指定一个包含tsconfig.json文件的目录。 当命令">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tsConfig">
+<meta property="og:url" content="http://yoursite.com/2020/08/06/tsConfig/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="概述如果一个目录下存在一个tsconfig.json文件，那么它意味着这个目录是TypeScript项目的根目录。使用tsconfig.json 不带任何输入文件的情况下调用tsc，编译器会从当前目录开始去查找tsconfig.json文件，逐级向上搜索父目录。 不带任何输入文件的情况下调用tsc，且使用命令行参数–project（或-p）指定一个包含tsconfig.json文件的目录。 当命令">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-08-06T08:26:26.073Z">
+<meta property="article:modified_time" content="2020-08-06T08:26:33.834Z">
 <meta property="article:author" content="Max">
 <meta name="twitter:card" content="summary">
   
@@ -174,86 +178,278 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-tsConfig" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+    <h1 class="article-title" itemprop="name">
+      tsConfig
+    </h1>
+  
+
+
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2020/08/06/tsConfig/" class="archive-article-date">
         <time datetime="2020-08-06T08:26:26.073Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-06</time>
 </a>
 
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">3.2k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">13分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h5 id="如果一个目录下存在一个tsconfig-json文件，那么它意味着这个目录是TypeScript项目的根目录。"><a href="#如果一个目录下存在一个tsconfig-json文件，那么它意味着这个目录是TypeScript项目的根目录。" class="headerlink" title="如果一个目录下存在一个tsconfig.json文件，那么它意味着这个目录是TypeScript项目的根目录。"></a>如果一个目录下存在一个tsconfig.json文件，那么它意味着这个目录是TypeScript项目的根目录。</h5><h2 id="使用tsconfig-json"><a href="#使用tsconfig-json" class="headerlink" title="使用tsconfig.json"></a>使用tsconfig.json</h2><ul>
+<li>不带任何输入文件的情况下调用tsc，编译器会从当前目录开始去查找tsconfig.json文件，逐级向上搜索父目录。</li>
+<li>不带任何输入文件的情况下调用tsc，且使用命令行参数–project（或-p）指定一个包含tsconfig.json文件的目录。</li>
+<li>当命令行上指定了输入文件时，tsconfig.json文件会被忽略。</li>
+</ul>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><ul>
+<li>使用”files”属性</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;compilerOptions&quot;: &#123;</span><br><span class="line">        &quot;module&quot;: &quot;commonjs&quot;,</span><br><span class="line">        &quot;noImplicitAny&quot;: true,</span><br><span class="line">        &quot;removeComments&quot;: true,</span><br><span class="line">        &quot;preserveConstEnums&quot;: true,</span><br><span class="line">        &quot;sourceMap&quot;: true</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;files&quot;: [</span><br><span class="line">        &quot;core.ts&quot;,</span><br><span class="line">        &quot;sys.ts&quot;,</span><br><span class="line">        &quot;types.ts&quot;,</span><br><span class="line">        &quot;scanner.ts&quot;,</span><br><span class="line">        &quot;parser.ts&quot;,</span><br><span class="line">        &quot;utilities.ts&quot;,</span><br><span class="line">        &quot;binder.ts&quot;,</span><br><span class="line">        &quot;checker.ts&quot;,</span><br><span class="line">        &quot;emitter.ts&quot;,</span><br><span class="line">        &quot;program.ts&quot;,</span><br><span class="line">        &quot;commandLineParser.ts&quot;,</span><br><span class="line">        &quot;tsc.ts&quot;,</span><br><span class="line">        &quot;diagnosticInformationMap.generated.ts&quot;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用”include”和”exclude”属性</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;compilerOptions&quot;: &#123;</span><br><span class="line">        &quot;module&quot;: &quot;system&quot;,</span><br><span class="line">        &quot;noImplicitAny&quot;: true,</span><br><span class="line">        &quot;removeComments&quot;: true,</span><br><span class="line">        &quot;preserveConstEnums&quot;: true,</span><br><span class="line">        &quot;outFile&quot;: &quot;..&#x2F;..&#x2F;built&#x2F;local&#x2F;tsc.js&quot;,</span><br><span class="line">        &quot;sourceMap&quot;: true</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;include&quot;: [</span><br><span class="line">        &quot;src&#x2F;**&#x2F;*&quot;</span><br><span class="line">    ],</span><br><span class="line">    &quot;exclude&quot;: [</span><br><span class="line">        &quot;node_modules&quot;,</span><br><span class="line">        &quot;**&#x2F;*.spec.ts&quot;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="详解"><a href="#详解" class="headerlink" title="详解"></a>详解</h2><ul>
+<li>==compilerOptions==: 对象类型，设置编译的选项，不设置则使用默认配置，配置项比较多，后面再列</li>
+<li>====files====: 数组类型，用于表示由 ts 管理的文件的具体文件路径</li>
+<li>==exclude==: 数组类型，用于表示 ts 排除的文件（2.0 以上支持 Glob）</li>
+<li>==include==: 数组类型，用于表示 ts 管理的文件（2.0 以上）</li>
+<li>==compileOnSave==: 布尔类型，用于 IDE 保存时是否生成编译后的文件</li>
+<li>==extends==: 字符串类型，用于继承 ts 配置，2.1 版本后支持</li>
+<li>==typeAcquisition==: 对象类型，设置自动引入库类型定义文件(.d.ts)相关，该对象下面有 <strong>3 个子属性分别是:</strong><blockquote>
+<ol>
+<li>++enable++: 布尔类型，是否开启自动引入库类型定义文件(.d.ts)，默认为 false</li>
+<li>++include++: 数组类型，允许自动引入的库名，如：[“jquery”, “lodash”]</li>
+<li>++exculde++: 数组类型，排除的库名</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+<h6 id="如不设定-files-和-includ-ts-默认是-exclude-以外的所有的以-ts-和-tsx-结尾的文件。"><a href="#如不设定-files-和-includ-ts-默认是-exclude-以外的所有的以-ts-和-tsx-结尾的文件。" class="headerlink" title="如不设定 files 和 includ: ts 默认是 exclude 以外的所有的以 .ts 和 .tsx 结尾的文件。"></a>如不设定 files 和 includ: ts 默认是 exclude 以外的所有的以 .ts 和 .tsx 结尾的文件。</h6><h6 id="如同时设置-files-的优先级最高，exclude-次之，include-最低。"><a href="#如同时设置-files-的优先级最高，exclude-次之，include-最低。" class="headerlink" title="如同时设置: files 的优先级最高，exclude 次之，include 最低。"></a>如同时设置: files 的优先级最高，exclude 次之，include 最低。</h6><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;compilerOptions&quot;: &#123;</span><br><span class="line">    &#x2F;* Basic Options *&#x2F;</span><br><span class="line">    &quot;target&quot;: &quot;es5&quot;,                          &#x2F;* target用于指定编译之后的版本目标 version: &#39;ES3&#39; (default), &#39;ES5&#39;, &#39;ES2015&#39;, &#39;ES2016&#39;, &#39;ES2017&#39;,&#39;ES2018&#39; or &#39;ESNEXT&#39;. *&#x2F;</span><br><span class="line">    &quot;module&quot;: &quot;commonjs&quot;,                     &#x2F;* 用来指定要使用的模块标准: &#39;none&#39;, &#39;commonjs&#39;, &#39;amd&#39;, &#39;system&#39;, &#39;umd&#39;, &#39;es2015&#39;, or &#39;ESNext&#39;. *&#x2F;</span><br><span class="line">    &quot;lib&quot;: [</span><br><span class="line">      &quot;es6&quot;,</span><br><span class="line">      &quot;dom&quot;</span><br><span class="line">    ],                             &#x2F;* lib用于指定要包含在编译中的库文件，这个我们在前面的课程中讲过一点，如果你要使用一些ES6的新语法，你需要引入ES6这个库，或者也可以写ES2015。 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;allowJs&quot;: true,                       &#x2F;* allowJs设置的值为true或false，用来指定是否允许编译JS文件，默认是false，即不编译JS文件。 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;checkJs&quot;: true,                       &#x2F;* checkJs的值为true或false，用来指定是否检查和报告JS文件中的错误，默认是false。 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;jsx&quot;: &quot;preserve&quot;,                     &#x2F;* 指定jsx代码用于的开发环境: &#39;preserve&#39;, &#39;react-native&#39;, or &#39;react&#39;. *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;declaration&quot;: true,                   &#x2F;* declaration的值为true或false，用来指定是否在编译的时候生成相应的&quot;.d.ts&quot;声明文件。如果设为true，编译每个ts文件之后会生成一个js文件和一个声明文件。但是declaration和allowJs不能同时设为true。 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;declarationMap&quot;: true,                &#x2F;* 值为true或false，指定是否为声明文件.d.ts生成map文件 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;sourceMap&quot;: true,                     &#x2F;* sourceMap的值为true或false，用来指定编译时是否生成.map文件。 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;outFile&quot;: &quot;.&#x2F;&quot;,                       &#x2F;* outFile用于指定将输出文件合并为一个文件，他的值为一个文件路径名，比如设置为&quot;.&#x2F;dist&#x2F;main.js&quot;，则输出的文件为一个main.js文件。但是要注意，只有设置module的值为amd和system模块时才支持这个配置。 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;outDir&quot;: &quot;.&#x2F;&quot;,                        &#x2F;* outDir用来指定输出文件夹，值为一个文件夹路径字符串，输出的文件都将放置在这个文件夹。 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;rootDir&quot;: &quot;.&#x2F;&quot;,                       &#x2F;* 用来指定编译文件的根目录，编译器会在根目录查找入口文件，如果编译器发现以rootDir的值作为根目录查找入口文件并不会把所有文件加载进去的话会报错，但是不会停止编译。 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;composite&quot;: true,                     &#x2F;* 是否编译构建引用项目 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;removeComments&quot;: true,                &#x2F;* removeComments值为true或false，用于指定是否将编译后的文件中的注释删掉，设为true的话即删掉注释，默认为false。 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;noEmit&quot;: true,                        &#x2F;* 不生成编译文件，这个一般很少用了。 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;importHelpers&quot;: true,                 &#x2F;* importHelpers的值为true或false，指定是否引入tslib里的辅助工具函数，默认为false。 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;downlevelIteration&quot;: true,            &#x2F;* 当target为“ES5”或“ES3”时，为“for-of”、“spread”和“destructuring”中的迭代器提供完全支持。 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;isolatedModules&quot;: true,               &#x2F;* isolatedModules的值为true或false，指定是否将每个文件作为单独的模块，默认为true，他不可以和declaration同时设定。 *&#x2F;</span><br><span class="line"></span><br><span class="line">    &#x2F;* Strict Type-Checking Options *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;strict&quot;: true,                           &#x2F;* strict的值为true或false，用于指定是否启动所有类型检查，如果设为true则会同时开启下面这几个严格类型检查，默认为false。 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;noImplicitAny&quot;: true,                 &#x2F;* noImplicitAny的值为true或false，如果我们没有为一些值设置明确的类型，编译器会默认认为这个值为any类型，如果将noImplicitAny设为true，则如果没有设置明确的类型会报错，默认值为false。 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;strictNullChecks&quot;: true,              &#x2F;* strictNullChecks的值为true或false，这个配置项我们在前面课程讲过了，当设为true时，null和undefined值不能赋值给非这两种类型的值，别的类型的值也不能赋给他们， 除了any类型，还有个例外就是undefined可以赋值给void类型。 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;strictFunctionTypes&quot;: true,           &#x2F;* strictFunctionTypes的值为true或false，用来指定是否使用函数参数双向协变检查。还记得我们讲类型兼容性的时候讲过函数参数双向协变的这个例子： *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;strictBindCallApply&quot;: true,           &#x2F;* strictBindCallApply的值为true或false，设为true后会对bind、call和apply绑定的方法的参数的检测是严格检测的 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;strictPropertyInitialization&quot;: true,  &#x2F;* strictPropertyInitialization的值为true或false，设为true后会检查类的非undefined属性是否已经在构造函数里初始化，如果要开启这项，需要同时开启strictNullChecks，默认为false。 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;noImplicitThis&quot;: true,                &#x2F;* 当 this表达式的值为 any类型的时候，生成一个错误。 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;alwaysStrict&quot;: true,                  &#x2F;* alwaysStrict的值为true或false，指定始终以严格模式检查每个模块，并且在编译之后的JS文件中加入&quot;use strict&quot;字符串，用来告诉浏览器该JS为严格模式。 *&#x2F;</span><br><span class="line"></span><br><span class="line">    &#x2F;* Additional Checks *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;noUnusedLocals&quot;: true,                &#x2F;* noUnusedLocals的值为true或false，用于检查是否有定义了但是没有使用的变量，对于这一点的检测，使用ESLint可以在你书写代码的时候做提示，你可以配合使用。他的默认值为false *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;noUnusedParameters&quot;: true,            &#x2F;* noUnusedParameters的值为true或false，用于检查是否有在函数体中没有使用的参数，这个也可以配合ESLint来做检查，他默认是false。 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;noImplicitReturns&quot;: true,             &#x2F;* noImplicitReturns的值为true或false，用于检查函数是否有返回值，设为true后，如果函数没有返回值则会提示，默认为false。 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;noFallthroughCasesInSwitch&quot;: true,    &#x2F;* noFallthroughCasesInSwitch的值为true或false，用于检查switch中是否有case没有使用break跳出switch，默认为false。 *&#x2F;</span><br><span class="line"></span><br><span class="line">    &#x2F;* Module Resolution Options *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;moduleResolution&quot;: &quot;node&quot;,            &#x2F;* moduleResolution用于选择模块解析策略，有&quot;node&quot;和&quot;classic&quot;两种类型，我们在讲模块解析的时候已经讲过了。 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;baseUrl&quot;: &quot;.&quot;,                       &#x2F;* baseUrl用于设置解析非相对模块名称的基本目录，相对模块不会受baseUrl的影响。 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;paths&quot;: &#123;</span><br><span class="line">    &#x2F;&#x2F;   &quot;@&#x2F;*&quot;: [&quot;src&#x2F;*&quot;]</span><br><span class="line">    &#x2F;&#x2F; &#125;,                           &#x2F;* paths用于设置模块名到基于baseUrl的路径映射 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;rootDirs&quot;: [</span><br><span class="line">    &#x2F;&#x2F;   &quot;src&#x2F;module&quot;,</span><br><span class="line">    &#x2F;&#x2F;   &quot;src&#x2F;core&quot;</span><br><span class="line">    &#x2F;&#x2F; ],                        &#x2F;* rootDirs可以指定一个路径列表，在构建时编译器会将这个路径列表中的路径中的内容都放到一个文件夹中. *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;typeRoots&quot;: [],                       &#x2F;* typeRoots用来指定声明文件或文件夹的路径列表，如果指定了此项，则只有在这里列出的声明文件才会被加载。 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;types&quot;: [],                           &#x2F;* types用来指定需要包含的模块，只有在这里列出的模块的声明文件才会被加载进来。 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;allowSyntheticDefaultImports&quot;: true,  &#x2F;* allowSyntheticDefaultImports的值为true或false，用来指定允许从没有默认导出的模块中默认导入。 *&#x2F;</span><br><span class="line">    &quot;esModuleInterop&quot;: true,                   &#x2F;* 通过为导入内容创建命名空间，实现CommonJS和ES模块之间的互操作性 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;preserveSymlinks&quot;: true,              &#x2F;* 不把符号链接解析为其真实路径，具体可以了解下webpack和nodejs的symlink相关知识 *&#x2F;</span><br><span class="line"></span><br><span class="line">    &#x2F;* Source Map Options *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;sourceRoot&quot;: &quot;&quot;,                      &#x2F;* sourceRoot用于指定调试器应该找到TypeScript文件而不是源文件位置，这个值会被写进.map文件里。 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;mapRoot&quot;: &quot;&quot;,                         &#x2F;* mapRoot用于指定调试器找到映射文件而非生成文件的位置，指定map文件的根路径，该选项会影响.map文件中的sources属性。 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;inlineSourceMap&quot;: true,               &#x2F;* inlineSourceMap值为true或false，指定是否将map文件的内容和js文件编译在一个同一个js文件中，如果设为true，则map的内容会以&#x2F;&#x2F;# sourceMappingURL&#x3D;然后接base64字符串的形式插入在js文件底部。 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;inlineSources&quot;: true,                 &#x2F;* inlineSources的值是true或false，用于指定是否进一步将.ts文件的内容也包含到输出文件中。 *&#x2F;</span><br><span class="line"></span><br><span class="line">    &#x2F;* Experimental Options *&#x2F;</span><br><span class="line">    &quot;experimentalDecorators&quot;: true,        &#x2F;* experimentalDecorators的值是true或false，用于指定是否启用实验性的装饰器特性 *&#x2F;</span><br><span class="line">    &#x2F;&#x2F; &quot;emitDecoratorMetadata&quot;: true,         &#x2F;* emitDecoratorMetadata的值为true或false，用于指定是否为装饰器提供元数据支持，关于元数据，也是ES6的新标准，可以通过Reflect提供的静态方法获取元数据，如果需要使用Reflect的一些方法，需要引入ES2015.Reflect这个库 *&#x2F;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#x2F;&#x2F; &quot;files&quot;: [], &#x2F;&#x2F; files可以配置一个数组列表，里面包含指定文件的相对或绝对路径，编译器在编译的时候只会编译包含在files中列出的文件。如果不指定，则取决于有没有设置include选项，如果没有include选项，则默认会编译根目录以及所有子目录中的文件。这里列出的路径必须是指定文件，而不是某个文件夹，而且不能使用* ? **&#x2F; 等通配符</span><br><span class="line">  &#x2F;&#x2F; &quot;include&quot;: [], &#x2F;&#x2F; include也可以指定要编译的路径列表，但是和files的区别在于，这里的路径可以是文件夹，也可以是文件，可以使用相对和绝对路径，而且可以使用通配符，比如&quot;.&#x2F;src&quot;即表示要编译src文件夹下的所有文件以及子文件夹的文件。</span><br><span class="line">  &#x2F;&#x2F; &quot;exclude&quot;: [], &#x2F;&#x2F; exclude表示要排除的、不编译的文件，他也可以指定一个列表，规则和include一样，可以是文件可以是文件夹，可以是相对路径或绝对路径，可以使用通配符。</span><br><span class="line">  &#x2F;&#x2F; &quot;extends&quot;: &quot;&quot;, &#x2F;&#x2F; extends可以通过指定一个其他的tsconfig.json文件路径，来继承这个配置文件里的配置，继承来的文件的配置会覆盖当前文件定义的配置。TS在3.2版本开始，支持继承一个来自Node.js包的tsconfig.json配置文件.</span><br><span class="line">  &#x2F;&#x2F; &quot;compileOnSave&quot;: true &#x2F;&#x2F; compileOnSave的值是true或false，如果设为true，在我们编辑了项目中文件保存的时候，编辑器会根据tsconfig.json的配置重新生成文件，不过这个要编辑器支持。</span><br><span class="line">  &#x2F;&#x2F; &quot;references&quot;: [] &#x2F;&#x2F; 一个对象数组，指定要引用的项目</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="其它配置说明"><a href="#其它配置说明" class="headerlink" title="其它配置说明"></a>其它配置说明</h2><p>→ → → <a href="http://json.schemastore.org/tsconfig/" target="_blank" rel="noopener">传送门</a></p>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/06/tsConfig/" target="_blank">tsConfig</a>
-  
-    </h1>
-  
+      </a>
+    </div>
+    
 
-
-        <div class="article-info info-on-right">
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Max
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://yoursite.com/2020/08/06/tsConfig/" title="tsConfig" target="_blank">http://yoursite.com/2020/08/06/tsConfig/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
-          
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
 
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/06/tsConfig/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/07/27/hello-world/" class="archive-article-date">
-        <time datetime="2020-07-27T07:49:42.840Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-27</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/27/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World222222222222222</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/07/27/hello-world/" target="_blank">Hello World222222222222222</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
+
+
+
+
+
+
+
   
+  <div id="gitment-ctn"></div>
   
-    </div></section>
+    <!-- 中文 -->
+    <link rel="stylesheet" href="/lib/gitment.css">
+    <script src="/lib/gitment.js"></script>
+  
+  <script>
+    <!-- id: "tsConfig" -->
+    var gitment = new Gitment({
+      id: "20200806162626",
+      owner: 'SuperYun',
+      repo: 'SuperYun.github.io',
+      oauth: {
+        client_id: '51ec0d0aefe18a2e9c07',
+        client_secret: '7c3f48ae4ceab3970062dae94ec2dff277727357',
+      },
+    })
+    gitment.render('gitment-ctn')
+  </script>
+
+
   
 
-    
 
 
           </div>
@@ -294,8 +490,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
